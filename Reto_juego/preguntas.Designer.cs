@@ -61,6 +61,7 @@ namespace Reto_juego
             this.Txpuntos = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bdpruebasofka1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdpruebasofka1DataSetBindingSource)).BeginInit();
@@ -83,7 +84,7 @@ namespace Reto_juego
             this.groupBox1.Controls.Add(this.TextBox3);
             this.groupBox1.Controls.Add(this.TextBox2);
             this.groupBox1.Controls.Add(this.TextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(226, 44);
+            this.groupBox1.Location = new System.Drawing.Point(226, 149);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -95,27 +96,30 @@ namespace Reto_juego
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 169);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(57, 169);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 20);
+            this.label6.Size = new System.Drawing.Size(31, 25);
             this.label6.TabIndex = 12;
             this.label6.Text = "R/";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(67, 134);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(57, 134);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 20);
+            this.label7.Size = new System.Drawing.Size(31, 25);
             this.label7.TabIndex = 11;
             this.label7.Text = "R/";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 103);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(57, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 20);
+            this.label3.Size = new System.Drawing.Size(31, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "R/";
             // 
@@ -128,14 +132,15 @@ namespace Reto_juego
             this.Btguardar.TabIndex = 6;
             this.Btguardar.Text = "Guardar pregunta";
             this.Btguardar.UseVisualStyleBackColor = true;
-            this.Btguardar.Click += new System.EventHandler(this.Btguardar_Click);
+            this.Btguardar.Click += new System.EventHandler(this.Btguardar_Click_1);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(67, 71);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(57, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 20);
+            this.label5.Size = new System.Drawing.Size(31, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "R/";
             // 
@@ -143,7 +148,7 @@ namespace Reto_juego
             // 
             this.Labelpreg.AutoSize = true;
             this.Labelpreg.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.Labelpreg.Location = new System.Drawing.Point(37, 30);
+            this.Labelpreg.Location = new System.Drawing.Point(19, 30);
             this.Labelpreg.Name = "Labelpreg";
             this.Labelpreg.Size = new System.Drawing.Size(24, 28);
             this.Labelpreg.TabIndex = 7;
@@ -195,43 +200,48 @@ namespace Reto_juego
             // 
             // TextBox5
             // 
+            this.TextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox5.Location = new System.Drawing.Point(99, 166);
             this.TextBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBox5.Name = "TextBox5";
-            this.TextBox5.Size = new System.Drawing.Size(685, 26);
+            this.TextBox5.Size = new System.Drawing.Size(685, 30);
             this.TextBox5.TabIndex = 4;
             this.TextBox5.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
             // TextBox4
             // 
+            this.TextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox4.Location = new System.Drawing.Point(99, 132);
             this.TextBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBox4.Name = "TextBox4";
-            this.TextBox4.Size = new System.Drawing.Size(685, 26);
+            this.TextBox4.Size = new System.Drawing.Size(685, 30);
             this.TextBox4.TabIndex = 3;
             // 
             // TextBox3
             // 
+            this.TextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox3.Location = new System.Drawing.Point(99, 100);
             this.TextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBox3.Name = "TextBox3";
-            this.TextBox3.Size = new System.Drawing.Size(685, 26);
+            this.TextBox3.Size = new System.Drawing.Size(685, 30);
             this.TextBox3.TabIndex = 2;
             // 
             // TextBox2
             // 
+            this.TextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox2.Location = new System.Drawing.Point(99, 68);
             this.TextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBox2.Name = "TextBox2";
-            this.TextBox2.Size = new System.Drawing.Size(685, 26);
+            this.TextBox2.Size = new System.Drawing.Size(685, 30);
             this.TextBox2.TabIndex = 1;
             // 
             // TextBox1
             // 
+            this.TextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox1.Location = new System.Drawing.Point(64, 32);
             this.TextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBox1.Name = "TextBox1";
-            this.TextBox1.Size = new System.Drawing.Size(720, 26);
+            this.TextBox1.Size = new System.Drawing.Size(720, 30);
             this.TextBox1.TabIndex = 0;
             // 
             // label1
@@ -248,9 +258,10 @@ namespace Reto_juego
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(6, 230);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(4, 230);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.Size = new System.Drawing.Size(73, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Puntos";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
@@ -262,18 +273,19 @@ namespace Reto_juego
             this.Labnivel.ForeColor = System.Drawing.Color.Red;
             this.Labnivel.Location = new System.Drawing.Point(37, 75);
             this.Labnivel.Name = "Labnivel";
-            this.Labnivel.Size = new System.Drawing.Size(107, 128);
+            this.Labnivel.Size = new System.Drawing.Size(93, 128);
             this.Labnivel.TabIndex = 3;
-            this.Labnivel.Text = "0";
+            this.Labnivel.Text = "1";
             this.Labnivel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Labnivel.TextChanged += new System.EventHandler(this.Labnivel_TextChanged);
             // 
             // Txpuntos
             // 
-            this.Txpuntos.Location = new System.Drawing.Point(71, 227);
+            this.Txpuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txpuntos.Location = new System.Drawing.Point(83, 227);
             this.Txpuntos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Txpuntos.Name = "Txpuntos";
-            this.Txpuntos.Size = new System.Drawing.Size(109, 26);
+            this.Txpuntos.Size = new System.Drawing.Size(97, 30);
             this.Txpuntos.TabIndex = 5;
             this.Txpuntos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Txpuntos.TextChanged += new System.EventHandler(this.Txpuntos_TextChanged);
@@ -284,7 +296,7 @@ namespace Reto_juego
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.Labnivel);
             this.groupBox2.Controls.Add(this.Txpuntos);
-            this.groupBox2.Location = new System.Drawing.Point(31, 44);
+            this.groupBox2.Location = new System.Drawing.Point(31, 149);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -292,11 +304,22 @@ namespace Reto_juego
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(31, 444);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(1048, 46);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Cerrar y continuar mas tarde";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Ingresar_preguntas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 352);
+            this.ClientSize = new System.Drawing.Size(1106, 502);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -337,6 +360,6 @@ namespace Reto_juego
         private Label label7;
         private Label label3;
         private BindingSource bdpruebasofka1DataSetBindingSource;
-       
+        private Button button1;
     }
 }

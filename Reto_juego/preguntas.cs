@@ -13,14 +13,22 @@ namespace Reto_juego
 {
     public partial class Ingresar_preguntas : Form
     {
-        int nivel=1;int puntos=0;int cont = 1;int validador = 0;
+        int nivel=1;int puntos=0;int cont = 1;int validador = 0;int qtypreguntas=0;
         Conexion conect = new Conexion();
         List<string> aux = new List<string>();
-        
+
         public Ingresar_preguntas()
         {
             InitializeComponent();
-            if (Labelpreg.Text == "1") { nivel = 1;Labnivel.Text = nivel.ToString(); }
+            Inicio nfrm = new Inicio();
+            qtypreguntas = nfrm.Contadorreg();
+                      
+            if (qtypreguntas > 0 && qtypreguntas < 6) { nivel = 1;Labnivel.Text = nivel.ToString();Labelpreg.Text = (qtypreguntas=qtypreguntas + 1).ToString();cont = qtypreguntas; }
+            if (qtypreguntas > 5 && qtypreguntas < 11) { nivel = 2; Labnivel.Text = nivel.ToString(); Labelpreg.Text = (qtypreguntas=qtypreguntas + 1).ToString(); cont = qtypreguntas; }
+            if (qtypreguntas > 10 && qtypreguntas < 16) { nivel = 3; Labnivel.Text = nivel.ToString(); Labelpreg.Text = (qtypreguntas=qtypreguntas + 1).ToString(); cont = qtypreguntas; }
+            if (qtypreguntas > 15 && qtypreguntas < 21) { nivel = 4; Labnivel.Text = nivel.ToString(); Labelpreg.Text = (qtypreguntas=qtypreguntas + 1).ToString(); cont = qtypreguntas; }
+            if (qtypreguntas > 21 && qtypreguntas < 26) { nivel = 5; Labnivel.Text = nivel.ToString(); Labelpreg.Text = (qtypreguntas = qtypreguntas + 1).ToString(); cont = qtypreguntas; }
+            if (qtypreguntas ==25) { MessageBox.Show("las preguntas estan completas, ¿desea ingresarlas de nuevo?"); }
         }
 
         private void TextBox5_TextChanged(object sender, EventArgs e)
@@ -105,14 +113,18 @@ namespace Reto_juego
             }
         }
 
-        private void Btguardar_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btguardar_Click_1(object sender, EventArgs e)
         {
             validador = 0;
             if (cont == 26)
             {
-                Ingresar_preguntas frming = new Ingresar_preguntas();
                 MessageBox.Show("Ya concluyo el ingreso de preguntas, seguidamente el formulario se cerrara  ¡¡Gracias!!");
-                frming.Close();
+                this.Close();
             }
             //condicionales que validan que se ingresen los puntos al inicio del nivel
             if (Labelpreg.Text == "1" || Labelpreg.Text == "6" || Labelpreg.Text == "11" || Labelpreg.Text == "16" || Labelpreg.Text == "21")
@@ -120,7 +132,7 @@ namespace Reto_juego
                 if (Txpuntos.Text == "")
                 {
                     MessageBox.Show("Debe ingresar los puntos correspondientes al nivel");
-                    
+
                 }
                 else
                 {
@@ -128,7 +140,7 @@ namespace Reto_juego
                     {
                         puntos = Convert.ToUInt16(Txpuntos.Text);
                         Txpuntos.Enabled = false;
-                        validador = validador + 1;                        
+                        validador = validador + 1;
                     }
                     catch
                     {
@@ -137,7 +149,7 @@ namespace Reto_juego
                     }
                 }
             }
-            else 
+            else
             {
                 Txpuntos.Text = puntos.ToString();
                 validador = validador + 1;
@@ -149,7 +161,7 @@ namespace Reto_juego
             {
                 MessageBox.Show("Debe diligenciar tanto la pregunta como las 4 opciones de respuesta");
             }
-            else 
+            else
             {
                 validador = validador + 1;
             }
@@ -160,12 +172,11 @@ namespace Reto_juego
             }
             else
             {
-                MessageBox.Show("Debe seleccionar mediante las casillas de verificación la respuesta correcta");                
+                MessageBox.Show("Debe seleccionar mediante las casillas de verificación la respuesta correcta");
             }
             //se valida si todas las validaciones fueron correctas 
-            if (validador == 3) 
+            if (validador == 3 && cont<26)
             {
-                MessageBox.Show("Validaciones correctas aca se inserta en la bd");
                 
                 aux.Add(Labelpreg.Text);
                 aux.Add(Labnivel.Text);
@@ -174,37 +185,52 @@ namespace Reto_juego
                 conect.Insertarpregunta(aux);
                 aux.Clear();
 
-                for (int i = 1; i < 5; i++) 
+                for (int i = 1; i < 5; i++)
                 {
                     string b = Labelpreg.Text + "." + i.ToString();
                     aux.Add(b);
                     aux.Add(Labelpreg.Text);
-                    switch (i) 
+                    bool j;
+                    switch (i)
                     {
                         case 1:
                             aux.Add(TextBox2.Text);
+                            j = CheckBox1.Checked;
+                            aux.Add(j.ToString());
                             break;
                         case 2:
                             aux.Add(TextBox3.Text);
+                            j = CheckBox2.Checked;
+                            aux.Add(j.ToString());
                             break;
                         case 3:
                             aux.Add(TextBox4.Text);
+                            j = CheckBox3.Checked;
+                            aux.Add(j.ToString());
                             break;
                         case 4:
                             aux.Add(TextBox5.Text);
+                            j = CheckBox4.Checked;
+                            aux.Add(j.ToString());
                             break;
                         default:
                             break;
-                    }                    
-                    aux.Add(CheckBox1.ToString());
-                    conect.Insertarrespuesta(aux);
-                    aux.Clear();
+                    }
+                   
+                   conect.Insertarrespuesta(aux);
+                   aux.Clear();
+                    
+                }
+                if (cont > 25)
+                {
+                    MessageBox.Show("Concluyo el ingreso de las preguntas ¡¡Gracias!!");
+                    this.Close();
                 }
 
                 validador = 0;
                 cont = cont + 1;
                 Labelpreg.Text = cont.ToString();
-                if (cont == 6 || cont == 11 || cont == 16 || cont == 21) 
+                if (cont == 6 || cont == 11 || cont == 16 || cont == 21)
                 {
                     nivel = nivel + 1;
                     Labnivel.Text = nivel.ToString();
@@ -214,7 +240,13 @@ namespace Reto_juego
                 TextBox1.Text = ""; TextBox2.Text = ""; TextBox3.Text = ""; TextBox4.Text = ""; TextBox5.Text = "";
                 CheckBox1.Checked = false; CheckBox2.Checked = false; CheckBox3.Checked = false; CheckBox4.Checked = false;
             }
-            
+            if (cont > 25)
+            {
+                MessageBox.Show("Concluyo el ingreso de las preguntas ¡¡Gracias!!");
+                this.Close();
+            }
+
+
         }
     }
 }
