@@ -32,6 +32,17 @@ namespace Reto_juego
             connection.Close();            
         }
 
+        public void GuardarDatosjugador(List<string> vs10)
+        {
+            var info1 = vs10.ToArray();
+
+            Cadenaconn();
+            
+            command.CommandText = ("INSERT INTO Historial ([usuario],[fecha],[nivel],[puntos],[motivo]) VALUES ('" + info1[0] + "','" + info1[1] + "','" + info1[2] + "','" + info1[3] + "','" + info1[4] + "')"); //se crea consulta
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
         public void Cadenaconn() 
         {
            // OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bdpruebasofka1.mdb");
@@ -77,49 +88,53 @@ namespace Reto_juego
             List<string> vs = new List<string>();
             Random myObject = new Random();
             int ranNum;
-                    switch (a)
-                    {
-                        case 0:
-                            ranNum = myObject.Next(1, 5);
-                            vs.Add(tablesoporte.Rows[ranNum][0].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][1].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][2].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][3].ToString());
-                            break;
-                        case 5:
-                            ranNum = myObject.Next(6, 10);
-                            vs.Add(tablesoporte.Rows[ranNum][0].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][1].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][2].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][3].ToString());
-                            break;
-                        case 10:
-                            ranNum = myObject.Next(11, 15);
-                            vs.Add(tablesoporte.Rows[ranNum][0].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][1].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][2].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][3].ToString());
-                            break;
-                        case 15:
-                            ranNum = myObject.Next(16, 20);
-                            vs.Add(tablesoporte.Rows[ranNum][0].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][1].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][2].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][3].ToString());
-                            break;
-                        case 20:
-                            ranNum = myObject.Next(21, 25);
-                            vs.Add(tablesoporte.Rows[ranNum][0].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][1].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][2].ToString());
-                            vs.Add(tablesoporte.Rows[ranNum][3].ToString()); 
-                            break;
-                        default:
-                            break;
-                    
-                
-                
-                    }
+            try
+            {
+                switch (a)
+                {
+                    case 0:
+                        ranNum = myObject.Next(1, 5);
+                        vs.Add(tablesoporte.Rows[ranNum][0].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][1].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][2].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][3].ToString());
+                        break;
+                    case 5:
+                        ranNum = myObject.Next(6, 10);
+                        vs.Add(tablesoporte.Rows[ranNum][0].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][1].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][2].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][3].ToString());
+                        break;
+                    case 10:
+                        ranNum = myObject.Next(11, 15);
+                        vs.Add(tablesoporte.Rows[ranNum][0].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][1].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][2].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][3].ToString());
+                        break;
+                    case 15:
+                        ranNum = myObject.Next(16, 20);
+                        vs.Add(tablesoporte.Rows[ranNum][0].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][1].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][2].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][3].ToString());
+                        break;
+                    case 20:
+                        ranNum = myObject.Next(21, 25);
+                        vs.Add(tablesoporte.Rows[ranNum][0].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][1].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][2].ToString());
+                        vs.Add(tablesoporte.Rows[ranNum][3].ToString());
+                        break;
+                    default:
+                        break;
+
+
+
+                }
+            }
+            catch { MessageBox.Show("No hay registros en la base de datos, por favor ingrese las preguntas."); }
             return vs;
         }
 
