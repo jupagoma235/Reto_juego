@@ -9,7 +9,7 @@ namespace Reto_juego
      
     class Conexion
     {
-        OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bdpruebasofka1.mdb");
+        OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.15.0;Data Source=|DataDirectory|\\bdpruebasofka1.mdb");
         OleDbCommand command;
         DataTable tablesoporte = new DataTable();
         public void Insertarpregunta(List<string> vs) 

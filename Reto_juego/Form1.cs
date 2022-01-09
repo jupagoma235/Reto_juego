@@ -46,20 +46,33 @@ namespace Reto_juego
 
         private void ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Prueba_tu_conocimiento frm11 = new Prueba_tu_conocimiento();
-            frm11.MdiParent = this;
-            this.toolStripContainer1.ContentPanel.Controls.Add(frm11);
-            frm11.Location = new Point((toolStripContainer1.Width - frm11.Width) / 2, (toolStripContainer1.Height - frm11.Height) / 2);
-            frm11.Show();
+            try
+            {
+                Prueba_tu_conocimiento frm11 = new Prueba_tu_conocimiento();
+                frm11.MdiParent = this;
+                this.toolStripContainer1.ContentPanel.Controls.Add(frm11);
+                frm11.Location = new Point((toolStripContainer1.Width - frm11.Width) / 2, (toolStripContainer1.Height - frm11.Height) / 1);
+                frm11.Show();
+            }
+            finally { }
         }
 
         private void ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Ingresar_preguntas frm = new Ingresar_preguntas();
-            frm.MdiParent = this;
-            this.toolStripContainer1.ContentPanel.Controls.Add(frm);
-            frm.Location = new Point((toolStripContainer1.Width - frm.Width) / 2, (toolStripContainer1.Height - frm.Height) / 2);
-            frm.Show();
+            try
+            {
+                Ingresar_preguntas frm = new Ingresar_preguntas();
+                frm.MdiParent = this;
+                this.toolStripContainer1.ContentPanel.Controls.Add(frm);
+                frm.Location = new Point((toolStripContainer1.Width - frm.Width) / 2, (toolStripContainer1.Height - frm.Height) / 1);
+                frm.Show();
+            }
+            finally { }
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

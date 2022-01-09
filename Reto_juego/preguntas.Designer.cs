@@ -39,6 +39,7 @@ namespace Reto_juego
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ingresar_preguntas));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,6 +70,7 @@ namespace Reto_juego
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
@@ -84,7 +86,7 @@ namespace Reto_juego
             this.groupBox1.Controls.Add(this.TextBox3);
             this.groupBox1.Controls.Add(this.TextBox2);
             this.groupBox1.Controls.Add(this.TextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(226, 149);
+            this.groupBox1.Location = new System.Drawing.Point(226, 139);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -125,6 +127,7 @@ namespace Reto_juego
             // 
             // Btguardar
             // 
+            this.Btguardar.ForeColor = System.Drawing.Color.MidnightBlue;
             this.Btguardar.Location = new System.Drawing.Point(-1, 212);
             this.Btguardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Btguardar.Name = "Btguardar";
@@ -257,7 +260,7 @@ namespace Reto_juego
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 230);
             this.label2.Name = "label2";
@@ -285,18 +288,19 @@ namespace Reto_juego
             this.Txpuntos.Location = new System.Drawing.Point(83, 227);
             this.Txpuntos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Txpuntos.Name = "Txpuntos";
-            this.Txpuntos.Size = new System.Drawing.Size(97, 30);
+            this.Txpuntos.Size = new System.Drawing.Size(93, 30);
             this.Txpuntos.TabIndex = 5;
             this.Txpuntos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Txpuntos.TextChanged += new System.EventHandler(this.Txpuntos_TextChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.Labnivel);
             this.groupBox2.Controls.Add(this.Txpuntos);
-            this.groupBox2.Location = new System.Drawing.Point(31, 149);
+            this.groupBox2.Location = new System.Drawing.Point(31, 139);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -306,7 +310,8 @@ namespace Reto_juego
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 444);
+            this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.button1.Location = new System.Drawing.Point(31, 427);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(1048, 46);
             this.button1.TabIndex = 8;
@@ -318,6 +323,8 @@ namespace Reto_juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1106, 502);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
